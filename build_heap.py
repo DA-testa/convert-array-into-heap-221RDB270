@@ -42,10 +42,10 @@ def main():
     test = input()
     
     if test.upper() == 'I':
-         data = input()
-         data = list(map(int, data.split()))
+         n = input()
+         data = list(map(int, n.split()))
+    
     elif test.upper() == 'F':
-        
         filen = input()
         with open(filen, 'r') as file:
             data = list(map(int, file.read().split()))
