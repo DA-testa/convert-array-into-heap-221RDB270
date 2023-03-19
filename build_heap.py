@@ -39,7 +39,7 @@ def main():
     
 
     # input from keyboard
-    while true:
+    while True:
         inp = input()
         if inp == 'I':
             n = int(input())
