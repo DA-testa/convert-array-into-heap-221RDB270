@@ -56,7 +56,7 @@ def main():
 
     # output all swaps
     print(len(swaps))
-    if test == "I"
+    if test == "I":
         for i, j in swaps:
             print(i, j)
 
