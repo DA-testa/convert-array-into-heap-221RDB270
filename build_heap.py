@@ -39,9 +39,24 @@ def main():
     
 
     # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
-    test = input().strip()
+    while true:
+        inp = input()
+        if inp == 'I':
+            n = int(input())
+            data = list(map(int, input().split()))
+            test = input().strip()
+            break
+        elif inp == 'F':
+            file = input()
+            try:
+                with open(file, 'r') as f:
+                    input = f.readlines()
+                    data = list(map(int, input_lines[1].strip().split()))
+                    test = input_lines[2].strip()
+                    break
+            except FileNotFoundError:
+                print()
+                continue
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
@@ -56,9 +71,9 @@ def main():
 
     # output all swaps
     print(len(swaps))
-    if test == "F":
-        for i, j in swaps:
-            print(i, j)
+    
+    for i, j in swaps:
+        print(i, j)
 
 
 if __name__ == "__main__":
