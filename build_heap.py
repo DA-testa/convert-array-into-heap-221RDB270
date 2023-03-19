@@ -41,8 +41,7 @@ def main():
     # input from keyboard
     n = int(input())
     data = list(map(int, input().split()))
-    if n == "I":
-        n = int(input())
+    test = input().strip()
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
@@ -57,8 +56,9 @@ def main():
 
     # output all swaps
     print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
+    if test == "I"
+        for i, j in swaps:
+            print(i, j)
 
 
 if __name__ == "__main__":
