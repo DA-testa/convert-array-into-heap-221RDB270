@@ -43,7 +43,7 @@ def main():
     # input from keyboard
     test = input()
     
-    if "I" in option:
+    if "I" in test:
          try:
             d = int(input())
             data = list(map(int, input().split()))
@@ -51,7 +51,7 @@ def main():
             print("Error")
             return
     
-    elif  "F" in option:
+    elif  "F" in test:
         try:
             filen = input()
             with open(f"test/{filen}", 'r') as file:
