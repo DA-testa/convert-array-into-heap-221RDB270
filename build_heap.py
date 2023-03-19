@@ -1,5 +1,5 @@
 # python3
-
+import os
 
 def build_heap(data):
     swaps = []
@@ -7,7 +7,7 @@ def build_heap(data):
     # try to achieve  O(n) and not O(n2)
     d = len(data)
     for i in range(d//2-1, -1, -1):
-        heapsort(i)
+        heapsort(i, data, swaps)
     return swaps  
         
     def heapsort(i, data, swaps):
@@ -46,7 +46,7 @@ def main():
     
     if "I" in option:
          try:
-            n = int(input())
+            d = int(input())
             data = list(map(int, input().split()))
          except ValueError:
             print("Error")
@@ -56,7 +56,7 @@ def main():
         try:
             filen = input()
             with open(f"test/{filen}", 'r') as file:
-                n = int(file.readline().strip())
+                d = int(file.readline().strip())
                 data = list(map(int, file.readline().strip().split()))
         except FileNotFoundError:
             print("Error")
