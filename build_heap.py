@@ -39,24 +39,19 @@ def main():
     
 
     # input from keyboard
-    while True:
-        inp = input()
-        if inp == 'I':
-            n = int(input())
-            data = list(map(int, input().split()))
-            test = input().strip()
-            break
-        elif inp == 'F':
-            file = input()
-            try:
-                with open(file, 'r') as f:
-                    input = f.readlines()
-                    data = list(map(int, input[1].strip().split()))
-                    test = input[2].strip()
-                    break
-            except FileNotFoundError:
-                print()
-                continue
+    test = input()
+    
+    if "I" in test:
+         n = int(input())
+         data = list(map(int, input().split()))
+    if "F" in test:
+        path = "./test"
+        filen = input()
+        data = os.path.join(path, filen)
+   
+           
+            
+           
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
