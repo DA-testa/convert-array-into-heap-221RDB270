@@ -41,13 +41,14 @@ def main():
     # input from keyboard
     test = input()
     
-    if "I" in test:
-         n = int(input())
-         data = list(map(int, input().split()))
-    if "F" in test:
-        path = "./test"
+    if test.upper() == 'I':
+         n = input()
+         data = list(map(int, data.split()))
+    elif test.upper() == 'F':
+        
         filen = input()
-        data = os.path.join(path, filen)
+        with open(filen, 'r') as file:
+            data = list(map(int, file.read().split()))
    
            
             
