@@ -42,7 +42,7 @@ def main():
     test = input()
     
     if test.upper() == 'I':
-         n = input()
+         data = input()
          data = list(map(int, data.split()))
     elif test.upper() == 'F':
         
