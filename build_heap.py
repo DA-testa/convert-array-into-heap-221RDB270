@@ -2,30 +2,29 @@
 import os
 
 def build_heap(data):
-    swaps = []
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
     d = len(data)
-    for i in range(d//2-1, -1, -1):
-        heapsort(i, data, swaps)
-    return swaps  
-        
-    def heapsort(i, data, swaps):
+    swaps = []
+
+    def heapsort(i):
         min = i
-        d = len(data)
         a = 2 * i + 1
         b = 2 * i + 2
         
-        if a < d and data[b] < data[min]:
+        if a < d and data[a] < data[min]:
             min = a
-       
+
         if b < d and data[b] < data[min]:
             min = b
-            
+
         if min != i:
             data[i], data[min] = data[min], data[i]
             swaps.append((i, min))
-            heapsort(min, data, swaps)
+            heapsort(min)
+
+    for i in range(d//2-1, -1, -1):
+        heapsort(i)
+
+    return swaps
             
     
 
