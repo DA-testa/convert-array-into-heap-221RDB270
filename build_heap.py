@@ -85,5 +85,5 @@ def main():
         print(i, j)
 
 
-if name == "main":
+if __name__ == "__main__":
     main()
