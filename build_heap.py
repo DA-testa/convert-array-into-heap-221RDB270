@@ -5,6 +5,27 @@ def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
+    d = len(data)
+    
+    def heapsort(i):
+        min = i
+        a = 2 * i + 1
+        b = 2 * i + 2
+        
+        if a < d and data[b] < data[min]:
+            min = a
+       
+        if b < d and data[b] < data[min]:
+            min = b
+            
+        if min != i:
+            data[i], data[min] = data[min], data[i]
+            swaps.append((i, min))
+            heapsort(min)
+            
+    for i in range(d//2-1, -1, -1):
+        heapsort(i)
+
 
 
     return swaps
@@ -15,7 +36,9 @@ def main():
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
-
+    text = input()
+    if text[0] == "I":
+        text = input()
 
     # input from keyboard
     n = int(input())
