@@ -51,8 +51,8 @@ def main():
             try:
                 with open(file, 'r') as f:
                     input = f.readlines()
-                    data = list(map(int, input_lines[1].strip().split()))
-                    test = input_lines[2].strip()
+                    data = list(map(int, input[1].strip().split()))
+                    test = input[2].strip()
                     break
             except FileNotFoundError:
                 print()
