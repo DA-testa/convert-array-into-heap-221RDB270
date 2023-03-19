@@ -6,9 +6,13 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     d = len(data)
-    
-    def heapsort(i):
+    for i in range(d//2-1, -1, -1):
+        heapsort(i)
+    return swaps  
+        
+    def heapsort(i, data, swaps):
         min = i
+        d = len(data)
         a = 2 * i + 1
         b = 2 * i + 2
         
@@ -21,14 +25,13 @@ def build_heap(data):
         if min != i:
             data[i], data[min] = data[min], data[i]
             swaps.append((i, min))
-            heapsort(min)
+            heapsort(min, data, swaps)
             
-    for i in range(d//2-1, -1, -1):
-        heapsort(i)
+    
 
 
 
-    return swaps
+    
 
 
 def main():
@@ -41,21 +44,30 @@ def main():
     # input from keyboard
     test = input()
     
-    if test.upper() == 'I':
-         n = input()
-         data = list(map(int, n.split()))
+    if "I" in option:
+         try:
+            n = int(input())
+            data = list(map(int, input().split()))
+         except ValueError:
+            print("Error")
+            return
     
-    elif test.upper() == 'F':
-        filen = input()
-        with open(filen, 'r') as file:
-            data = list(map(int, file.read().split()))
+    elif  "F" in option:
+        try:
+            filen = input()
+            with open(f"test/{filen}", 'r') as file:
+                n = int(file.readline().strip())
+                data = list(map(int, file.readline().strip().split()))
+        except FileNotFoundError:
+            print("Error")
+            return
    
            
             
            
 
     # checks if lenght of data is the same as the said lenght
-    
+    assert len(data) == n
    
 
     # calls function to assess the data 
@@ -73,5 +85,5 @@ def main():
         print(i, j)
 
 
-if __name__ == "__main__":
+if name == "main":
     main()
