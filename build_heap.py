@@ -55,7 +55,7 @@ def main():
            
 
     # checks if lenght of data is the same as the said lenght
-    assert len(data) == data
+    
    
 
     # calls function to assess the data 
